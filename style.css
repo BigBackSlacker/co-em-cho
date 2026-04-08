@@ -1,0 +1,250 @@
+* {
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffe4ec, #fff6f9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background: white;
+  padding: 30px 25px;
+  width: 90%;
+  max-width: 380px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(255, 122, 162, 0.25);
+  animation: floatIn 0.6s ease;
+}
+
+h1 {
+  font-size: 20px;
+  color: #ff6f91;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn a {
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Overlay mờ */
+.card-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* Thiệp */
+.card {
+  background: #fff;
+  padding: 25px;
+  width: 90%;
+  max-width: 350px;
+  border-radius: 20px;
+  text-align: center;
+  animation: pop 0.4s ease;
+}
+
+.card h2 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.card button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background: #ff7aa2;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: #ff5c8a;
+}
+
+/* Animation */
+@keyframes pop {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* FIX ẢNH BỊ CHỜM */
+.container img {
+  max-width: 100%;
+  max-height: 280px;   /* chỉnh số này nếu muốn ảnh to/nhỏ hơn */
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* FIX link bị xanh */
+.btn a {
+  text-decoration: none;
+  color: white;              /* đổi theo màu nút của bạn */
+}
+
+/* Riêng nút Bye */
+#move-random {
+  background:linear-gradient(135deg, #ff8fa3, #ff4d6d);       /* hoặc màu bạn đang dùng cho nút đỏ */
+  color: white;
+}
+
+/* ĐỒNG BỘ MÀU NÚT TOÀN SITE (GIỐNG INDEX) */
+.btn a {
+  display: inline-block;
+  padding: 12px 26px;
+  margin: 8px;
+  border-radius: 30px;
+
+  background: linear-gradient(135deg, #ff8fa3, #ff4d6d);
+  color: white !important;
+  text-decoration: none;
+
+  font-weight: 600;
+  font-size: 16px;
+
+  box-shadow: 0 6px 15px rgba(255, 77, 109, 0.35);
+  transition: all 0.25s ease;
+}
+
+.btn a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(255, 77, 109, 0.45);
+  opacity: 0.95;
+}
+
+.btn a:active {
+  transform: scale(0.96);
+}
+
+/* Thiệp mời kỷ yếu */
+.invite-card {
+  background: linear-gradient(145deg, #fff0f5, #ffe6ee);
+  border-radius: 26px;
+  padding: 28px 26px;
+  max-width: 360px;
+  width: 92%;
+  text-align: center;
+}
+
+/* Tiêu đề */
+.invite-card h2 {
+  color: #ff4d6d;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+/* Thông tin ngày giờ */
+.invite-info {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.invite-info p {
+  margin: 6px 0;
+  font-size: 14.5px;
+  color: #444;
+}
+
+.invite-info span {
+  font-weight: 600;
+  color: #ff4d6d;
+}
+
+/* Lời nhắn */
+.invite-message p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.invite-message small {
+  font-size: 13px;
+  color: #777;
+}
+
+/* Nút xác nhận */
+.invite-card button {
+  margin-top: 18px;
+  padding: 10px 30px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #ff8fa3, #ff4d6d);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+
+  box-shadow: 0 6px 16px rgba(255, 77, 109, 0.4);
+  transition: 0.25s ease;
+}
+
+.invite-card button:hover {
+  transform: translateY(-2px);
+}
+
+.invite-card button:active {
+  transform: scale(0.95);
+}

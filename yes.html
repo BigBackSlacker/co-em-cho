@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ỏ...</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+<!-- THIỆP MỜI KỶ YẾU -->
+<div class="card-overlay" id="card">
+  <div class="card invite-card">
+    <h2>🥰Thư Mời Quý Ông!🥰</h2>
+
+    <div class="invite-info">
+        <p><span>📅 Ngày:</span> 10 / 4 / 2026</p>
+        <p><span>📍 Địa điểm:</span> 12 Anh 1 - Trường THPT Chuyên Bắc Ninh</p>
+    </div>
+
+    <div class="invite-message">
+      <p id="type-text">
+      </p>
+      <small>
+        (Nếu cậu bận không thể đến thì cũng không sao nè :3)
+      </small>
+    </div>
+
+    <button id="close-card">Toi dong tinh 👨‍❤️‍👨</button>
+  </div>
+</div>
+
+
+    <!-- NỘI DUNG TRANG -->
+    <div class="container">
+      <div
+        class="tenor-gif-embed"
+        data-postid="253027946666209433"
+        data-share-method="host"
+        data-aspect-ratio="1.37853"
+        data-width="100%"
+      >
+        <img src="yes.gif">
+      </div>
+
+      <script
+        type="text/javascript"
+        async
+        src="https://tenor.com/embed.js"
+      ></script>
+
+      <h1>Hehehehe... Vay chung to se cho!😘</h1>
+    </div>
+
+    <script>
+      // Đóng thiệp
+      document.getElementById("close-card").onclick = function () {
+        document.getElementById("card").style.display = "none";
+      };
+    </script>
+    <script>
+  const textContainer = document.getElementById("type-text");
+
+  // Phần chữ thường
+  const normalText = 
+    "Có những khoảnh khắc chỉ cần đúng người xuất hiện là đủ đặc biệt rồi… ✨ " + "Và với bọn tớ, người đó chính là cậu!!! Khẹc khẹc. " +
+    "Thật ra thì… bọn tớ đã chờ ngày này lâu lắm rồi đó 🥺 " +
+    "Một buổi chiều không quá đặc biệt… nhưng sẽ trở nên rất đáng nhớ nếu có cậu xuất hiện 💕 " +
+    "Sự có mặt của cậu sẽ làm bọn tớ vui ";
+  // Spam "lắm"
+  const spamWord = "lắm ";
+  const spamCount = 50;
+
+  let index = 0;
+  let spamIndex = 0;
+  let spamTimes = 0;
+
+  function typeNormal() {
+    if (index < normalText.length) {
+      textContainer.innerHTML += normalText.charAt(index);
+      index++;
+      setTimeout(typeNormal, 50); // tốc độ gõ chữ thường (nhanh, mượt)
+    } else {
+      typeSpam();
+    }
+  }
+
+  function typeSpam() {
+    if (spamTimes < spamCount) {
+      if (spamIndex < spamWord.length) {
+        textContainer.innerHTML +=
+          `<span style="color:#ff4d6d;font-weight:600">${spamWord.charAt(
+            spamIndex
+          )}</span>`;
+        spamIndex++;
+        setTimeout(typeSpam, 14); // spam nhanh hơn
+      } else {
+        spamIndex = 0;
+        spamTimes++;
+        typeSpam();
+      }
+    } else {
+      textContainer.innerHTML += "đó!";
+    }
+  }
+
+  typeNormal();
+</script>
+
+  </body>
+</html>
